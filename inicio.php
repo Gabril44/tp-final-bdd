@@ -13,9 +13,9 @@
     <header class="Tituloosm">
         
         <nav>
-            <ul>
-                <li> <a class="logo" href="inicio.html"><img src="mini-logo.png"></a> <a href="cerrar_sesion.php"> CERRAR SESION </a> </li>
-            </ul>
+            
+                <li><a class="logo" href="inicio.html"><img src="mini-logo.png"></a> <a class="close" href="cerrar_sesion.php"> CERRAR SESION </a> </li>
+            
         </nav>
         
         <div class="barra">
@@ -28,7 +28,7 @@
                 <li><a href="contacto.html">Produccion</a></li>
                 <li><a href="contacto.html">Administracion</a></li>
                 <li><a href="contacto.html">Configuracion</a></li>
-                <li id=ultimoelemento><a href="contacto.html">Integrantes</a></li>   
+                <li id=ultimoelemento><a href="integrantes.html">Integrantes</a></li>   
             </ul>
         </div> 
     </header>

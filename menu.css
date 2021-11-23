@@ -99,10 +99,12 @@ body{
     }
     nav{
         background-color: burlywood;
-
+        padding: auto;
     }
-    
-
+    .close{
+        background-color: white;
+        border: black;
+    }
     @media (min-width: 768px){
         .barra:hover{
         width: 45%;
