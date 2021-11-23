@@ -59,7 +59,7 @@ body{
         height: 100vh;
         
         /*Color*/
-        background: rgba(5, 33, 51, 0.98);
+        background: black;
     }
     .barra:hover h2{
         /*posicion dentro de barra del h2*/
@@ -80,7 +80,7 @@ body{
     
     
     .barra:hover li{
-        border-top:1px solid #03121b;
+        border-top:1px solid white;
         /*Espacios entre las lineas y el contenido*/
         
         width:100%;
@@ -101,9 +101,7 @@ body{
         background-color: burlywood;
 
     }
-    .logo{
-        background-image: url('logo.png');
-    }
+    
 
     @media (min-width: 768px){
         .barra:hover{
