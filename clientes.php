@@ -21,7 +21,7 @@
         <div class="barra">
             <h2>Menu<img src="lista_icono_blanco.png" alt=""></h2>
             <ul>
-                <li><a href="delete.php">Inventario</a></li>
+                <li><a href="clientes.php">Inventario Clientes</a></li>
                 <li><a href="contacto.html">Compras</a></li>
                 <li><a href="contacto.html">Ventas</a></li>
                 <li><a href="contacto.html">Reportes</a></li>
@@ -37,25 +37,21 @@
  <h1 style="text-align: center;" >Bienvenido, esta es la base de datos de usuarios:</h1>	
 </main>
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "Habbo334A";
-$dbname = "mywebsite";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-
-
-$sql = "SELECT id, firstname, lastname, email FROM users";
-$result = $conn->query($sql);
+$conexion=mysqli_connect("thinkgreen.czqsnex935ev.sa-east-1.rds.amazonaws.com","admin","dabbdd2021","reciplas");
+$consulta = "SELECT persona.dni, persona.apellido, persona.nombre, persona.telefono, persona.email, persona.direccion
+FROM persona
+    LEFT JOIN proveedor 
+        ON persona.idPersona = proveedor.idProveedor
+    LEFT JOIN usuario 
+        ON persona.idPersona = usuario.idUsuario
+WHERE (proveedor.idProveedor IS NULL) AND (usuario.idUsuario IS NULL)";
+$result = $conexion->query($consulta);
 
 ?>
 <div style="text-align: center;">
-
+<form action="busqueda_clientes.php" method="post">
+  <input type="text" placeholder="busqueda por dni &#128270;" name="busqueda_dni">
+</form>
 <tr>
 	<td><a href="newslet.php">Register</a></td>
 </tr>
@@ -68,24 +64,34 @@ $result = $conn->query($sql);
 	?>		
 
 	  <tr>
-		<td>ID</td>
-		<td><?php echo $row["id"]; ?></td>
-		<td><a href="deluser.php?id=<?php echo $row["id"] ?>">Delete</a>
-	    <br><a href="update.php?id=<?php echo $row["id"] ?>">Update</a></td>  
+		<td>DNI</td>
+		<td><?php echo $row["dni"]; ?></td>
+		<td><a href="deluser.php?id=<?php echo $row["dni"] ?>">Delete</a>
+	    <br><a href="update.php?id=<?php echo $row["dni"] ?>">Update</a></td>  
 	</tr>
 	  <tr>
 		<td>First Name</td>
-		<td><?php echo $row["firstname"]; ?></td>
+		<td><?php echo $row["nombre"]; ?></td>
 		<td>&nbsp;</td>
 	  </tr>
 	  <tr>
 		<td>Last Name</td>
-		<td><?php echo $row["lastname"]; ?></td>
+		<td><?php echo $row["apellido"]; ?></td>
 		<td>&nbsp;</td>
 	  </tr>
 	  <tr>
 		<td>Email</td>
 		<td><?php echo $row["email"]; ?></td>
+		<td>&nbsp;</td>
+	  </tr>
+	  <tr>
+		<td>Telefono</td>
+		<td><?php echo $row["telefono"]; ?></td>
+		<td>&nbsp;</td>
+	  </tr>
+	  <tr>
+		<td>Direccion</td>
+		<td><?php echo $row["direccion"]; ?></td>
 		<td>&nbsp;</td>
 	  </tr>
 		
@@ -100,7 +106,7 @@ $result = $conn->query($sql);
 	}
 
 	
-$conn->close();            
+$conexion->close();            
 ?>
 
 </div>

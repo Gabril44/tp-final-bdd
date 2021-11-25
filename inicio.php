@@ -20,7 +20,7 @@
         <div class="barra">
             <h2>Menu<img src="lista_icono_blanco.png" alt=""></h2>
             <ul>
-                <li><a href="delete.php">Inventario</a></li>
+                <li><a href="clientes.php">Inventario Clientes</a></li>
                 <li><a href="contacto.html">Compras</a></li>
                 <li><a href="contacto.html">Ventas</a></li>
                 <li><a href="contacto.html">Reportes</a></li>
