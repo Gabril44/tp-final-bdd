@@ -47,6 +47,13 @@ input[type="submit"]:hover{
 input[type="submit"]:active{
     transform: scale(0.95);
 }
+h1{
+    margin-left: 5px;
+    align-items: center;
+    width: calc(20% - 100px);
+    font-family: montez;
+    font-size: 55px;
+}
 @media (max-width: 768px){
     form{
         width: 75%;
