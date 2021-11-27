@@ -11,27 +11,7 @@
 </head>
 <body>
 <header>
-<header class="Tituloosm">
-        
-        <nav>
-            
-            <li><a class="logo" href="inicio.php"><img src="mini-logo.png">INICIO </a> <a href="cerrar_sesion.php"> CERRAR SESION </a> </li>
-        </nav>
-        
-        <div class="barra">
-            <h2>Menu<img src="lista_icono_blanco.png" alt=""></h2>
-            <ul>
-                <li><a href="clientes.php">Inventario Clientes</a></li>
-                <li><a href="contacto.html">Compras</a></li>
-                <li><a href="contacto.html">Ventas</a></li>
-                <li><a href="contacto.html">Reportes</a></li>
-                <li><a href="contacto.html">Produccion</a></li>
-                <li><a href="contacto.html">Administracion</a></li>
-                <li><a href="contacto.html">Configuracion</a></li>
-                <li id=ultimoelemento><a href="integrantes.html">Integrantes</a></li>   
-            </ul>
-        </div> 
-    </header>
+<?php include('menu.html'); ?>
 </header>
 <main>
  <h1 style="text-align: center;" >Bienvenido, esta es la base de datos de usuarios:</h1>	
@@ -56,45 +36,27 @@ $result = $conexion->query($consulta);
 	<td><a href="newslet.php">Register</a></td>
 </tr>
 <table  width="300" border="1" style="margin: 0 auto;">
-	
+<thead>
+                    <tr>
+                        <th>Dni</th> <th>Nombre</th> <th>Apellido</th> <th>Email</th> <th>Telefono</th> <th>Direccion</th>
+                    </tr>
 	<?php
 	if ($result->num_rows > 0) {
-		// output data of each row
 		while($row = $result->fetch_assoc()) {    
 	?>		
+	  
+                </thead>
+                <tr>
+                    <td><?php echo $row['dni'] ?> </td>
+					<td><?php echo $row['nombre'] ?> </td> 
+					<td> <?php echo $row['apellido'] ?> </td>
+					<td> <?php echo $row['email'] ?> </td>
+					<td> <?php echo $row['telefono'] ?> </td>
+					<td> <?php echo $row['direccion'] ?> </td>
+					<td><a href="deluser.php?id=<?php echo $row["dni"] ?>">Delete</a>
+	                <br><a href="update.php?id=<?php echo $row["dni"] ?>">Update</a></td>
+                    </tr>
 
-	  <tr>
-		<td>DNI</td>
-		<td><?php echo $row["dni"]; ?></td>
-		<td><a href="deluser.php?id=<?php echo $row["dni"] ?>">Delete</a>
-	    <br><a href="update.php?id=<?php echo $row["dni"] ?>">Update</a></td>  
-	</tr>
-	  <tr>
-		<td>First Name</td>
-		<td><?php echo $row["nombre"]; ?></td>
-		<td>&nbsp;</td>
-	  </tr>
-	  <tr>
-		<td>Last Name</td>
-		<td><?php echo $row["apellido"]; ?></td>
-		<td>&nbsp;</td>
-	  </tr>
-	  <tr>
-		<td>Email</td>
-		<td><?php echo $row["email"]; ?></td>
-		<td>&nbsp;</td>
-	  </tr>
-	  <tr>
-		<td>Telefono</td>
-		<td><?php echo $row["telefono"]; ?></td>
-		<td>&nbsp;</td>
-	  </tr>
-	  <tr>
-		<td>Direccion</td>
-		<td><?php echo $row["direccion"]; ?></td>
-		<td>&nbsp;</td>
-	  </tr>
-		
 	<?php	
 		} 
 	?>

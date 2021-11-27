@@ -1,7 +1,6 @@
 <?php
 $uname = val($_POST["uname"]);  
-$upass = val($_POST["pass"]);
-$puntuacion;
+$upass = val($_POST["upass"]);
 function val($data) {
 	$data = trim($data);
 	$data = stripslashes($data);
@@ -11,14 +10,16 @@ function val($data) {
 session_start();
 $_SESSION['usuario']=$uname;
 $_SESSION['contraseña']=$upass;
-$conexion=mysqli_connect("thinkgreen.czqsnex935ev.sa-east-1.rds.amazonaws.com","admin","dabbdd2021","memorygame");
+$conexion=mysqli_connect("thinkgreen.czqsnex935ev.sa-east-1.rds.amazonaws.com","admin","dabbdd2021","reciplas");
 
-$consulta="SELECT*FROM users where username='$uname' and password='$upass'";
+$consulta="SELECT COUNT(*) as reg FROM usuario WHERE nombreUsuario = '$uname' and uPassword = '$upass'";
 $resultado=mysqli_query($conexion,$consulta);
 
-$filas=mysqli_num_rows($resultado);
 
-if($filas){  
+$row = mysqli_fetch_array($resultado);
+$reg = intval($row['reg']);
+
+if($reg>0){  
     header("location:inicio.php");
 }else{
     ?>
@@ -26,7 +27,7 @@ if($filas){
     include("index.html");
 
   ?>
-  <h1 class="bad">ERROR DE AUTENTIFICACION</h1>
+  <h2 style="text-align: center;">ERROR DE AUTENTIFICACION</h2>
   <?php
 }
 mysqli_free_result($resultado);

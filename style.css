@@ -9,7 +9,7 @@ body{
     text-align: center;
     display: flex;
     min-height: 100vh;
-    background-image: url('GAONAA.png');
+    background-image: url('fondo_hojas.jpg');
     background-size: cover;
 }
 form{
@@ -54,6 +54,7 @@ h1{
     font-family: montez;
     font-size: 55px;
 }
+
 @media (max-width: 768px){
     form{
         width: 75%;

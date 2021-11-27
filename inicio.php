@@ -11,30 +11,12 @@
 </head>
 <body>
     <header class="Tituloosm">
-        
-        <nav>
-            
-            <li><a class="logo" href="inicio.php"><img src="mini-logo.png">INICIO </a> <a href="cerrar_sesion.php"> CERRAR SESION </a> </li>
-        </nav>
-        
-        <div class="barra">
-            <h2>Menu<img src="lista_icono_blanco.png" alt=""></h2>
-            <ul>
-                <li><a href="clientes.php">Inventario Clientes</a></li>
-                <li><a href="contacto.html">Compras</a></li>
-                <li><a href="contacto.html">Ventas</a></li>
-                <li><a href="contacto.html">Reportes</a></li>
-                <li><a href="contacto.html">Produccion</a></li>
-                <li><a href="contacto.html">Administracion</a></li>
-                <li><a href="contacto.html">Configuracion</a></li>
-                <li id=ultimoelemento><a href="integrantes.html">Integrantes</a></li>   
-            </ul>
-        </div> 
+        <?php include('menu.html'); ?>
     </header>
     <main>
         <div style="text-align: center;">
-        <h1> WENAS WENAS MI RRRRRRRRRRRRRRRREYYYYYYYYYY </h1> <br>
-        <h2><- AHI ESTA EL MENU POR SI NO TE DISTE CUENTA TDV</h2>
+        <h1> BIENVENIDO! </h1> <br>
+        <h2><- MENU</h2>
         </div>
     </main>
 </body>

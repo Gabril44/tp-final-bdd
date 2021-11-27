@@ -12,26 +12,7 @@
 <body>
 <header>
 <header class="Tituloosm">
-        
-        <nav>
-            
-            <li><a class="logo" href="inicio.php"><img src="mini-logo.png">INICIO </a> <a href="cerrar_sesion.php"> CERRAR SESION </a> </li>
-        </nav>
-        
-        <div class="barra">
-            <h2>Menu<img src="lista_icono_blanco.png" alt=""></h2>
-            <ul>
-                <li><a href="clientes.php">Inventario Clientes</a></li>
-                <li><a href="contacto.html">Compras</a></li>
-                <li><a href="contacto.html">Ventas</a></li>
-                <li><a href="contacto.html">Reportes</a></li>
-                <li><a href="contacto.html">Produccion</a></li>
-                <li><a href="contacto.html">Administracion</a></li>
-                <li><a href="contacto.html">Configuracion</a></li>
-                <li id=ultimoelemento><a href="integrantes.html">Integrantes</a></li>   
-            </ul>
-        </div> 
-    </header>
+<?php include('menu.html'); ?>
 </header>
 <main>
  <h1 style="text-align: center;" >Bienvenido, esta es la base de datos de usuarios:</h1>	
@@ -61,7 +42,7 @@ $result = $conexion->query($consulta);
 		// output data of each row
 		while($row = $result->fetch_assoc()) {    
 	?>		
-
+     
 	  <tr>
 		<td>DNI</td>
 		<td><?php echo $row["dni"]; ?></td>
