@@ -19,7 +19,7 @@
       INNER JOIN Cliente
       ON persona.idPersona = Cliente.idCliente
       WHERE persona.dni = $dni_anterior";
-      $conexion=mysqli_connect("thinkgreen.czqsnex935ev.sa-east-1.rds.amazonaws.com","admin","dabbdd2021","reciplas");
+      $conexion=mysqli_connect("sql10.freesqldatabase.com","sql10456231","7LRtlYiDig","sql10456231");
       $result = $conexion->query($consulta);
       ?>
 <table width="300" border="0" cellspacing="1" cellpadding="1">

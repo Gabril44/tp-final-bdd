@@ -19,7 +19,7 @@
 </main>
 <?php
 $dni_busqueda = $_POST['busqueda_dni'];
-$conexion=mysqli_connect("thinkgreen.czqsnex935ev.sa-east-1.rds.amazonaws.com","admin","dabbdd2021","reciplas");
+$conexion=mysqli_connect("sql10.freesqldatabase.com","sql10456231","7LRtlYiDig","sql10456231");
 $consulta = "SELECT persona.dni, persona.apellido, persona.nombre, persona.telefono, persona.email, persona.direccion
 FROM persona
 INNER JOIN Cliente

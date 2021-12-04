@@ -7,7 +7,7 @@ WHERE Cliente.idCliente = (SELECT persona.idPersona FROM persona WHERE persona.d
 
 $consulta2 = "DELETE from persona where idPersona = (select idPersona from(select distinct idPersona from persona where persona.dni = $dni) temp)";
 
-$conexion = mysqli_connect("thinkgreen.czqsnex935ev.sa-east-1.rds.amazonaws.com","admin","dabbdd2021","reciplas");
+$conexion = mysqli_connect("sql10.freesqldatabase.com","sql10456231","7LRtlYiDig","sql10456231");
 
 if ($conexion->query($consulta) === TRUE) {
     if ($conexion->query($consulta2) === TRUE) {

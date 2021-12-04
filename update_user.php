@@ -17,7 +17,7 @@ INNER JOIN Cliente
         direccion = '$direccion'
 WHERE persona.dni = '$dni'";
 
-$conexion = mysqli_connect("thinkgreen.czqsnex935ev.sa-east-1.rds.amazonaws.com","admin","dabbdd2021","reciplas");
+$conexion = mysqli_connect("sql10.freesqldatabase.com","sql10456231","7LRtlYiDig","sql10456231");
 
 if ($conexion->query($consulta) === TRUE) {
 	header("location:inicio.php");

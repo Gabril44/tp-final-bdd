@@ -17,7 +17,7 @@
  <h1 style="text-align: center;" >Bienvenido, esta es la base de datos de usuarios:</h1>	
 </main>
 <?php
-$conexion=mysqli_connect("thinkgreen.czqsnex935ev.sa-east-1.rds.amazonaws.com","admin","dabbdd2021","reciplas");
+$conexion=mysqli_connect("sql10.freesqldatabase.com","sql10456231","7LRtlYiDig","sql10456231");
 $consulta = "SELECT persona.dni, persona.apellido, persona.nombre, persona.telefono, persona.email, persona.direccion
 FROM persona
     LEFT JOIN proveedor 

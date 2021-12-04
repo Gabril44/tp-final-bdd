@@ -1,5 +1,5 @@
 <?php
-$consulta = "INSERT INTO persona (nombre,apellido,dni,fecha_registro,email,telefono,direccion,estado_registrado,tipo)
+$consulta = "INSERT INTO persona (nombre,apellido,dni,fecha_registro,email,telefono,direccion,estado_registrado)
 VALUES(
 $nombre,
 $apellido,
@@ -8,10 +8,9 @@ $fch_registro,
 $email,
 $telefono,
 $direccion,
-$estado,
-$tipo)
+$estado)";
 
-SELECT persona.idPersona
+$consultaidPersona = "SELECT persona.idPersona
 FROM persona
 WHERE persona.dni = $dni";
 
@@ -23,5 +22,8 @@ $consulta2="INSERT INTO Cliente(
     )
     ";
 
-$conexion=mysqli_connect("thinkgreen.czqsnex935ev.sa-east-1.rds.amazonaws.com","admin","dabbdd2021","reciplas");
+$conexion=mysqli_connect("sql10.freesqldatabase.com","sql10456231","7LRtlYiDig","sql10456231");
 $result = $conexion->query($consulta);
+$resultidPersona = $conexion->query($consultaidPersona);
+$result2 = $conexion->query($consulta2);
+

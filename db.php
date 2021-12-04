@@ -1,5 +1,5 @@
 <?php
-$conexion=mysqli_connect("thinkgreen.czqsnex935ev.sa-east-1.rds.amazonaws.com","admin","dabbdd2021","reciplas");
+$conexion=mysqli_connect("sql10.freesqldatabase.com","sql10456231","7LRtlYiDig","sql10456231");
 $consulta = "SELECT persona.idPersona, persona.apellido, persona.nombre
 FROM persona
     LEFT JOIN proveedor 
